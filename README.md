@@ -12,15 +12,17 @@ Content scrapper developed in Julia. Download the fast way the interesting conte
 
 ```bash
 git clone https://github.com/atille/keeper.jl keeper
+mv keeper/src/keeper.jl /usr/bin/keeper
+chmod +x /usr/bin/keeper
 ```
 ## How to use
 
 ```bash
-$ julia keeper.jl --url=https://domain.com
-$ julia keeper.jl --url=https://domain.com --exts=jpg,png
-$ julia keeper.jl --url=https://domain.com --exts=jpg,png --dir=domain
-$ julia keeper.jl --url=https://domain.com --exts=jpg,png --dir=domain --https
-$ julia keeper.jl --url=https://domain.com --exts=jpg,png --dir=domain --https --separator=\'
+$ keeper --url=https://domain.com
+$ keeper --url=https://domain.com --exts=jpg,png
+$ keeper --url=https://domain.com --exts=jpg,png --dir=domain
+$ keeper --url=https://domain.com --exts=jpg,png --dir=domain --https
+$ keeper --url=https://domain.com --exts=jpg,png --dir=domain --https --separator=\'
 ```
 
 ### Arguments
@@ -36,7 +38,7 @@ $ julia keeper.jl --url=https://domain.com --exts=jpg,png --dir=domain --https -
 ## Example
 
 ```text
-julia hello.jl --url=https://imgur.com/gallery/wEQ4oLp --exts=jpg,png,gif --dir=imgur_thread --https --separator=\"
+$ keeper --url=https://imgur.com/gallery/wEQ4oLp --exts=jpg,png,gif --dir=imgur_thread --https --separator=\"
 [jpg] : https://i.imgur.com/XH1noBW.jpg
 [jpg] : https://i.imgur.com/XH1noBWh.jpg
   1.688980 seconds (184.67 k allocations: 9.289 MiB)
