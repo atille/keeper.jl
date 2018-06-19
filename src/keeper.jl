@@ -7,7 +7,8 @@ function main(args)
 	output_dir = nothing
 	ssl_forced = false
 	protocol = "http"
-
+	separator = "\""
+	
 	for arg in args
 		if startswith(arg, "--url=")
 			url = split(arg, "--url=")[2]
@@ -21,7 +22,11 @@ function main(args)
 		if startswith(arg, "--dir=")
 			output_dir = split(arg, "--dir=")[2]
 		end
-
+		
+		is startswith(arg, "--separator=")
+			separator = split(arg, "--separator=")[2]
+		end
+	
 		if isequal(arg, "--https")
 			ssl_forced = true
 			protocol = "https"
@@ -51,7 +56,7 @@ function main(args)
 
 	f = download(url)
 	data = readstring(open(f, "r"))
-	elements = split(data, "\"")
+	elements = split(data, separator)
 
 
 	for element in elements
