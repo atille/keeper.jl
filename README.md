@@ -43,3 +43,13 @@ $ keeper --url=https://imgur.com/gallery/wEQ4oLp --exts=jpg,png,gif --dir=imgur_
 [jpg] : https://i.imgur.com/XH1noBWh.jpg
   1.688980 seconds (184.67 k allocations: 9.289 MiB)
 ```
+
+## Behavior
+
+If your connection is not as good as possible, you can encounter a specific behavior due to the @async macro which allows the wget command to be performed even if the script is now shut. If you check your process, you should be able to see a long queue of wget commands, downloading the free way the images ; wait a minute until everything is fine and you can go to the dir folder to find your files at 100% downloaded.
+
+```bash
+$ ps faux | grep keeper | grep wget
+$ ps faux | grep keeper | grep wget | wc -l
+$ while true ; do ps faux | grep keeper | grep wget | wc -l ; sleep 6 ; sone
+```
