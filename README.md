@@ -51,5 +51,5 @@ If your connection is not as good as possible, you can encounter a specific beha
 ```bash
 $ ps faux | grep keeper | grep wget
 $ ps faux | grep keeper | grep wget | wc -l
-$ while true ; do ps faux | grep keeper | grep wget | wc -l ; sleep 6 ; sone
+$ while true ; do ps faux | grep keeper | grep wget | wc -l ; sleep 6 ; done
 ```
